@@ -1,0 +1,36 @@
+<!-- call the python program on the website and play the game -->
+<html> 
+<head>
+    <title>Play the Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Play the Game</h1>
+    </div>
+    <div class="content">
+        <p>Click the button to play the game.</p>
+        <form action="play.php" method="post">
+            <input type="submit" name="play" value="Play">
+        </form>
+        <?php
+            if(isset($_POST['play'])) {
+                $command = escapeshellcmd('python3 play.py');
+                $output = shell_exec($command);
+                echo $output;
+            }
+        ?>
+    </div>
+</body>
+</html>
+
+<!-- error is your file couldnot be found. whats the error and rectify it -->
+
+
+<!-- Path: Visual Studio Code\GitHub Copilot\Snake Game\play.py -->
+
+
+
+
+
